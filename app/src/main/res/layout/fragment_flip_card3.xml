@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="VocabularyViewModel"
+            type="com.example.englanguage.model.vocabulary.SuccessVocabulary" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".fragmentflipcard1.FlipCardFragment3">
+
+        <!-- 6 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/flip_layout6"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="8.5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"></androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/cart_front6"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="8.5dp"
+            android:background="@drawable/bg_flipcart_item_6_front"
+            android:gravity="center"
+            android:text="@={VocabularyViewModel.word}"
+            android:textAlignment="center"
+            android:textColor="#000000"
+            android:fontFamily="@font/brandon2"
+            android:textSize="50sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cart_behind6"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="8.5dp"
+            android:fontFamily="@font/brandon2"
+            android:alpha="0"
+            android:background="@drawable/bg_flipcart_item_6_behind"
+            android:gravity="center"
+            android:text="@={VocabularyViewModel.mean}"
+            android:textAlignment="center"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/txtPitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="30dp"
+            android:text="Pitch"
+            android:fontFamily="@font/brandon2"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cart_behind6" />
+
+        <SeekBar
+            android:id="@+id/seek_bar_pitch"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:progress="50"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPitch" />
+
+        <TextView
+            android:id="@+id/txtSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="70dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/brandon2"
+            android:text="Speed"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seek_bar_pitch" />
+
+        <SeekBar
+            android:id="@+id/seek_bar_speed"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:progress="50"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSpeed" />
+
+        <Button
+            android:id="@+id/mButtonSpeak"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/brandon2"
+            android:enabled="false"
+            android:text="Say"
+            android:textColor="#FFFFFF"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/seek_bar_speed" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
